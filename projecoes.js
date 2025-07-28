@@ -36,8 +36,7 @@ function adicionarCusto() {
     } if (listaDeCustosExistentes.includes(novoCusto.toLowerCase())) {
         mensagem.innerText = "Você já colocou este custo"
     }
-        
-    console.log(custosTotais)
+     
     custoTotal.innerText = custosTotais.reduce((pv, na) => pv + na)
 }
 
@@ -49,15 +48,19 @@ function adicionarSocio() {
 function calcularLucroDeCada(){
     const listaDeSocios = document.getElementById("listaDeSocios")
     const listaDeInputs = Array.from(listaDeSocios.getElementsByTagName("input"))
+    const listaDePorcentagens = listaDeInputs.map((inputs) => Number(inputs.value))
     const custoTotal = document.getElementById("custoTotal")
     const qtdVendida = document.getElementById("qtdVendida").value
     const precoProduto = document.getElementById("precoProduto").value
     let receita = qtdVendida * precoProduto 
     document.getElementById("receita").innerText = receita 
     const custosTotais = custoTotal.innerText
-     listaDeInputs.forEach((input) => {
+    const somaPorcentagens = listaDePorcentagens.reduce((pv, na) => pv + na)
+    if (somaPorcentagens<=100) {
+        listaDeInputs.forEach((input) => {
      input.parentElement.querySelector("p").innerText = `R$ ${(input.value/100)*(receita - custosTotais)}`}
     )
+    }
      }; 
      
 
