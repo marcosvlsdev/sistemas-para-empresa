@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeções para empresa</title>
+</head>
+<body>
+    <h1>Projeções</h1>
+    <h2>Custos Fixos</h2>
+        <input type="text" id="novoCusto" placeholder="Nome do custo fixo">
+        <input type="number" id="valor" placeholder="Valor do custo">
+        
+        <button onclick="adicionarCusto()">Adicionar Custo</button>
+        <p id="mensagem"></p>
+        <ul id="custosFixosList"></ul>
+        <p>Custo total: <span id="custoTotal"></span></p>
+    <input type="number" id="precoProduto" placeholder="Preço do produto">
+    <input type="number" id="qtdVendida" placeholder="Quantidade vendida">
+    <button onclick="calcularBreakEven(), calcularMargem() ">Calcular</button>
+    <ul>
+        <li >Receita: <span id="receita"></span></li>
+        <li >Margem Líquia: <span id="margemLiquida"></span></li>
+        <li>Minimo de vendas para pagar custos fixos: <span id="minimoBreakEven"></span></li>
+    </ul>
+    <h2>Cap Table</h2>
+    <button onclick="adicionarSocio()">Adicionar socio</button>
+    <button onclick="calcularLucroDeCada()">Calcular lucro</button>
+    <ul id="listaDeSocios">
+
+    </ul>
+        
+    <script src="projecoes.js"></script>
+</body>
+</html>
